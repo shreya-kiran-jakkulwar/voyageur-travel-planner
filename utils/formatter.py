@@ -46,7 +46,26 @@ def format_trip(data: dict[str, Any]) -> str:
     lines.append(_section_header("ITINERARY"))
     lines.append(RULE)
     lines.append(_format_itinerary(data.get("itinerary", [])))
+    
+    # Calculate and add total cost summary
+    total_cost = _calculate_total_cost(data.get("itinerary", []))
+    lines.append("")
+    lines.append(RULE)
+    lines.append(f"  {BOLD}{YELLOW}>> TRIP TOTAL: {_RUPEE}{total_cost:,}{RESET}")
+    lines.append(RULE)
+    
     return "\n".join(lines)
+
+
+def _calculate_total_cost(itinerary: list[dict[str, Any]]) -> int:
+    """Sums up all estimated_cost_inr values from the itinerary."""
+    total = 0
+    for day in itinerary:
+        for slot in ["morning", "afternoon", "evening"]:
+            cost = day.get(slot, {}).get("estimated_cost_inr", 0)
+            if isinstance(cost, (int, float)):
+                total += int(cost)
+    return total
 
 
 # ── Brief ────────────────────────────────────────────────────────────────────
