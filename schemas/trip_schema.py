@@ -14,6 +14,7 @@ TRIP_SCHEMA = """{
     "interests": ["string — e.g. history, food, adventure"],
     "pace": "relaxed | moderate | packed",
     "dietary_needs": ["string — e.g. vegetarian, halal, none"],
+    "packing_list": ["string — essential items to pack for this specific trip"],
     "notes": "string — any extra observations"
   },
   "itinerary": [

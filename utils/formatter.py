@@ -78,6 +78,7 @@ _BRIEF_LABELS: list[tuple[str, str]] = [
     ("interests", "Interests"),
     ("pace", "Pace"),
     ("dietary_needs", "Dietary Needs"),
+    ("packing_list", "Packing List"),
     ("notes", "Notes"),
 ]
 

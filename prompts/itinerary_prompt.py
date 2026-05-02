@@ -27,7 +27,8 @@ code fences, no extra text before or after the JSON object.
 3. The length of the "itinerary" array MUST equal "duration_days".
 4. All costs must be realistic estimates in Indian Rupees (INR).
 5. Durations must be realistic (e.g. a museum visit ≈ 90–120 min).
-6. "budget_tier" must be exactly one of: budget, mid, luxury.
+6. "packing_list" should contain 5-10 essential items specifically suited for the destination, climate, and activities mentioned.
+7. "budget_tier" must be exactly one of: budget, mid, luxury.
 7. "pace" must be exactly one of: relaxed, moderate, packed.
 8. Do NOT wrap the JSON in markdown code fences or add any explanation.
 
